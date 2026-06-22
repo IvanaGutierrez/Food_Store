@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CategoriaDAO {
 
-    // 🔵 INSERTAR
+    // INSERTAR
     public void insertar(Categoria c) {
 
         String sql = "INSERT INTO categoria(nombre, descripcion) VALUES(?, ?)";
@@ -24,14 +24,14 @@ public class CategoriaDAO {
 
             ps.executeUpdate();
 
-            System.out.println("✅ Categoria insertada");
+            System.out.println("Categoria insertada");
 
         } catch (Exception e) {
-            System.out.println("❌ Error insertar: " + e.getMessage());
+            System.out.println("Error insertar: " + e.getMessage());
         }
     }
 
-    // 🔵 LISTAR
+    // LISTAR
     public List<Categoria> listar() {
 
         List<Categoria> lista = new ArrayList<>();
@@ -46,7 +46,7 @@ public class CategoriaDAO {
 
                 Categoria c = new Categoria();
 
-                // ⚠️ id viene de Base
+                // id viene de Base
                 c.setId(rs.getLong("id"));
 
                 c.setNombre(rs.getString("nombre"));
@@ -56,7 +56,7 @@ public class CategoriaDAO {
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Error listar: " + e.getMessage());
+            System.out.println(" Error listar: " + e.getMessage());
         }
 
         return lista;
